@@ -7,7 +7,7 @@ extends AudioStreamPlayer
 func _ready():
 	stream.set_filename("florestan-subset.sf2")
 	stream.set_preset(0)
-	
+	print(stream.get_preset_name(0))
 	pass
 
 #func _process(delta):
@@ -261,7 +261,8 @@ func _on_Area2DKey24_input_event(viewport, event, shape_idx):
 
 
 
-#func _on_OptionButton_ready():
+func _on_OptionButton_ready():
+	
 	#OptionButton.add_item("piano", 0)
-	#pass # replace with function body
+	pass # replace with function body
 #this is where i tried doing the function but it still doesn't work

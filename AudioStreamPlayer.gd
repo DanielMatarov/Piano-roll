@@ -3,58 +3,102 @@ extends AudioStreamPlayer
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+var note = 53
 
 func _ready():
 	stream.set_filename("florestan-subset.sf2")
 	stream.set_preset(0)
-	print(stream.get_preset_name(0))
+	for i in range(stream.get_preset_count()):
+		$OptionButton.add_item(stream.get_preset_name(i))
+	
 	pass
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
-
+func _on_OptionButton_item_selected(p):
+	stream.set_preset(p)
+	pass # replace with function body
 
 
 
 func _on_Area2DKey1_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(50, 1.0)
+			stream.note_on(note, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(50)
+			stream.note_off(note)
 	pass 
+	
+func _on_Area2DKey1_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey1_mouse_exited():
+	stream.note_off(note)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey2_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(51, 1.0)
+			stream.note_on(note+1, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(51)
+			stream.note_off(note+1)
 	pass # replace with function body
+	
+func _on_Area2DKey2_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+1,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey2_mouse_exited():
+	stream.note_off(note+1)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey3_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(52, 1.0)
+			stream.note_on(note+2, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(52)
+			stream.note_off(note+2)
 	pass # replace with function body
+	
+func _on_Area2DKey3_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+2,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey3_mouse_exited():
+	stream.note_off(note+2)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey4_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(53, 1.0)
+			stream.note_on(note+3, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(53)
+			stream.note_off(note+3)
+	pass # replace with function body
+
+func _on_Area2DKey4_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+3,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey4_mouse_exited():
+	stream.note_off(note+3)
 	pass # replace with function body
 
 
@@ -62,207 +106,438 @@ func _on_Area2DKey4_input_event(viewport, event, shape_idx):
 func _on_Area2DKey5_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(54, 1.0)
+			stream.note_on(note+4, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(54)
+			stream.note_off(note+4)
 	pass # replace with function body
+
+func _on_Area2DKey5_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+4,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey5_mouse_exited():
+	stream.note_off(note+4)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey6_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(55, 1.0)
+			stream.note_on(note+5, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(55)
+			stream.note_off(note+5)
 	pass # replace with function body
+	
+func _on_Area2DKey6_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+5,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey6_mouse_exited():
+	stream.note_off(note+5)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey7_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(56, 1.0)
+			stream.note_on(note+6, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(56)
+			stream.note_off(note+6)
 	pass # replace with function body
+	
+func _on_Area2DKey7_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+6,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey7_mouse_exited():
+	stream.note_off(note+6)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey8_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(57, 1.0)
+			stream.note_on(note+7, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(57)
+			stream.note_off(note+7)
 	pass # replace with function body
+	
+func _on_Area2DKey8_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+7,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey8_mouse_exited():
+	stream.note_off(note+7)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey9_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(58, 1.0)
+			stream.note_on(note+8, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(58)
+			stream.note_off(note+8)
 	pass # replace with function body
+
+func _on_Area2DKey9_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+8,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey9_mouse_exited():
+	stream.note_off(note+8)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey10_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(59, 1.0)
+			stream.note_on(note+9, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(59)
+			stream.note_off(note+9)
+	pass # replace with function body
+	
+func _on_Area2DKey10_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+9,1.0)
 	pass # replace with function body
 
+func _on_Area2DKey10_mouse_exited():
+	stream.note_off(note+9)
+	pass # replace with function body
+	
+	
 
 func _on_Area2DKey11_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(60, 1.0)
+			stream.note_on(note+10, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(60)
+			stream.note_off(note+10)
 	pass # replace with function body
+	
+func _on_Area2DKey11_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+10,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey11_mouse_exited():
+	stream.note_off(note+10)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey12_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(61, 1.0)
+			stream.note_on(note+11, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(61)
+			stream.note_off(note+11)
 	pass # replace with function body
+	
+func _on_Area2DKey12_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+11,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey12_mouse_exited():
+	stream.note_off(note+11)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey13_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(62, 1.0)
+			stream.note_on(note+12, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(62)
+			stream.note_off(note+12)
 	pass # replace with function body
+	
+func _on_Area2DKey13_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+12,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey13_mouse_exited():
+	stream.note_off(note+12)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey14_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(63, 1.0)
+			stream.note_on(note+13, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(63)
+			stream.note_off(note+13)
 	pass # replace with function body
+
+func _on_Area2DKey14_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+13,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey14_mouse_exited():
+	stream.note_off(note+13)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey15_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(64, 1.0)
+			stream.note_on(note+14, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(64)
+			stream.note_off(note+14)
 	pass # replace with function body
+
+func _on_Area2DKey15_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+14,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey15_mouse_exited():
+	stream.note_off(note+14)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey16_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(65, 1.0)
+			stream.note_on(note+15, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(65)
+			stream.note_off(note+15)
 	pass # replace with function body
+	
+func _on_Area2DKey16_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+15,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey16_mouse_exited():
+	stream.note_off(note+15)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey17_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(66, 1.0)
+			stream.note_on(note+16, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(66)
+			stream.note_off(note+16)
 	pass # replace with function body
+
+func _on_Area2DKey17_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+16,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey17_mouse_exited():
+	stream.note_off(note+16)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey18_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(67, 1.0)
+			stream.note_on(note+17, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(67)
+			stream.note_off(note+17)
 	pass # replace with function body
+
+func _on_Area2DKey18_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+17,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey18_mouse_exited():
+	stream.note_off(note+17)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey19_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(68, 1.0)
+			stream.note_on(note+18, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(68)
+			stream.note_off(note+18)
 	pass # replace with function body
+	
+func _on_Area2DKey19_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+18,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey19_mouse_exited():
+	stream.note_off(note+18)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey20_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(69, 1.0)
+			stream.note_on(note+19, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(69)
+			stream.note_off(note+19)
 	pass # replace with function body
+
+func _on_Area2DKey20_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+19,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey20_mouse_exited():
+	stream.note_off(note+19)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey21_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(70, 1.0)
+			stream.note_on(note+20, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(70)
+			stream.note_off(note+20)
 	pass # replace with function body
+
+func _on_Area2DKey21_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+20,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey21_mouse_exited():
+	stream.note_off(note+20)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey22_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(71, 1.0)
+			stream.note_on(note+21, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(71)
+			stream.note_off(note+21)
 	pass # replace with function body
+	
+func _on_Area2DKey22_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+21,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey22_mouse_exited():
+	stream.note_off(note+21)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey23_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(72, 1.0)
+			stream.note_on(note+22, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(72)
+			stream.note_off(note+22)
 	pass # replace with function body
+
+func _on_Area2DKey23_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+22,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey23_mouse_exited():
+	stream.note_off(note+22)
+	pass # replace with function body
+
 
 
 func _on_Area2DKey24_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			stream.note_on(73, 1.0)
+			stream.note_on(note+23, 1.0)
 			play(0.0)
 		else:
-			stream.note_off(73)
+			stream.note_off(note+23)
+	pass # replace with function body
+
+func _on_Area2DKey24_mouse_entered():
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		stream.note_on(note+23,1.0)
+	pass # replace with function body
+
+func _on_Area2DKey24_mouse_exited():
+	stream.note_off(note+23)
 	pass # replace with function body
 
 
 
 
-func _on_OptionButton_ready():
-	
-	#OptionButton.add_item("piano", 0)
-	pass # replace with function body
-#this is where i tried doing the function but it still doesn't work
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

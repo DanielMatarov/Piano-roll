@@ -388,6 +388,124 @@ items = [  ]
 selected = -1
 script = ExtResource( 3 )
 
+[node name="SpinBoxVolume" type="SpinBox" parent="." index="2"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 254.001
+margin_top = 466.0
+margin_right = 328.001
+margin_bottom = 490.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 1.0
+step = 0.1
+page = 0.0
+value = 0.7
+exp_edit = false
+rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="Label" type="Label" parent="." index="3"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 259.001
+margin_top = 448.0
+margin_right = 308.001
+margin_bottom = 462.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Volume"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SpinBox2Pan" type="SpinBox" parent="." index="4"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 673.027
+margin_top = 467.513
+margin_right = 747.027
+margin_bottom = 491.513
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 1.0
+step = 0.1
+page = 0.0
+value = 0.5
+exp_edit = false
+rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
+[node name="Label2" type="Label" parent="." index="5"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 643.0
+margin_top = 454.0
+margin_right = 768.0
+margin_bottom = 468.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Pan(0-1, 0.5 center)"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SpinBoxTuning" type="SpinBox" parent="." index="6"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 467.864
+margin_top = 468.0
+margin_right = 541.864
+margin_bottom = 492.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 10.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+prefix = ""
+suffix = ""
+
 [connection signal="input_event" from="images/Area2DKey1" to="." method="_on_Area2DKey1_input_event"]
 [connection signal="mouse_entered" from="images/Area2DKey1" to="." method="_on_Area2DKey1_mouse_entered"]
 [connection signal="mouse_exited" from="images/Area2DKey1" to="." method="_on_Area2DKey1_mouse_exited"]
@@ -461,3 +579,6 @@ script = ExtResource( 3 )
 [connection signal="mouse_entered" from="images/Area2DKey24" to="." method="_on_Area2DKey24_mouse_entered"]
 [connection signal="mouse_exited" from="images/Area2DKey24" to="." method="_on_Area2DKey24_mouse_exited"]
 [connection signal="item_selected" from="OptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="value_changed" from="SpinBoxVolume" to="." method="_on_SpinBox_value_changed"]
+[connection signal="value_changed" from="SpinBox2Pan" to="." method="_on_SpinBox2Pan_value_changed"]
+[connection signal="value_changed" from="SpinBoxTuning" to="." method="_on_SpinBoxTuning_value_changed"]

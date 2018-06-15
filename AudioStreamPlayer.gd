@@ -22,6 +22,18 @@ func _on_OptionButton_item_selected(p):
 	pass # replace with function body
 
 
+func _on_SpinBox_value_changed(volume):
+	stream.set_channel_volume(0, volume)
+	pass # replace with function body
+	
+func _on_SpinBox2Pan_value_changed(pan):
+	stream.set_channel_pan(0, pan)
+	pass # replace with function body
+
+func _on_SpinBoxTuning_value_changed(tuning):
+	stream.set_channel_tuning(0, tuning)
+	pass # replace with function body
+	
 
 func _on_Area2DKey1_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
@@ -500,44 +512,4 @@ func _on_Area2DKey24_mouse_entered():
 func _on_Area2DKey24_mouse_exited():
 	stream.note_off(note+23)
 	pass # replace with function body
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
